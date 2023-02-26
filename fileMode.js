@@ -1,5 +1,5 @@
-
 import fs from "fs";
+import { calculate, getValues } from "./utils";
 
 const startFileMode = () => {
   process.stdin.removeAllListeners('data');
@@ -10,7 +10,6 @@ const startFileMode = () => {
   process.stdin.on('data', (data) => {
     const link = data.toString().trim();
     const [a, b, c] = validateData(link);
-    console.log(a, b, c);
     process.exit(0);  
   });
 }
