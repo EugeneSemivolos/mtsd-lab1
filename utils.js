@@ -3,15 +3,12 @@ export function calculate(a, b, c) {
   if (d > 0) {
     const x1 = (-b - Math.sqrt(d))/(2*a);
     const x2 = (-b + Math.sqrt(d))/(2*a);
-    console.log('There are 2 roots:');
-    console.log(`x1 = ${x1}`);
-    console.log(`x2 = ${x2}`);
+    return `There are 2 roots:\nx1 = ${x1}\nx2 = ${x2}`;
   } else if (d === 0) {
     const x = -b/(2*a);
-    console.log('There are 1 root:');
-    console.log(`x = ${x}`);  
+    return `There are 1 root\nx = ${x}`;  
   } else {
-    console.log('There are 0 roots');
+    return 'There are 0 roots';
   }
 }
 

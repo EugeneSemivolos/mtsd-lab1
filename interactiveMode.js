@@ -9,7 +9,7 @@ const startInteractiveMode = () => {
   process.stdin.on('data', data => {
     const [a, b, c] = getValues(data);
     logData(a, b, c);
-    calculate(a, b, c);
+    console.log(calculate(a, b, c));
 
     console.log("\nFine! Let's take one more!");
     console.log('Enter params a, b, c:');
