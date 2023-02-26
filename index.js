@@ -1,3 +1,4 @@
+import startFileMode from "./fileMode.js";
 import startInteractiveMode from "./interactiveMode.js";
 
 console.log('Which mode do you want to turn on?(interactive or file)');
@@ -7,7 +8,7 @@ process.stdin.on('data', data => {
   if (workingMode === 'interactive') {
     startInteractiveMode();
   } else if (workingMode === 'file') {
-    console.log('File mode is activated!');
+    startFileMode();
   } else {
     console.log('Enter correct mode!');
   }
