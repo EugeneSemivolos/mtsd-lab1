@@ -1,4 +1,4 @@
-import { calculate, getValues } from "./utils.js";
+import { calculate, getParams, logParams } from "./utils.js";
 
 const startInteractiveMode = () => {
   process.stdin.removeAllListeners('data');
@@ -7,19 +7,11 @@ const startInteractiveMode = () => {
   console.log('\nEnter params a, b, c:');
 
   process.stdin.on('data', data => {
-    const [a, b, c] = getValues(data);
-    logData(a, b, c);
-    console.log(calculate(a, b, c));
-
-    console.log("\nFine! Let's take one more!");
-    console.log('Enter params a, b, c:');
+    const params = getParams(data);
+    logParams(params);
+    console.log(calculate(params));
+    process.exit(0);
   });
 };
-
-function logData(a, b, c) {
-  console.log(`\nEquation is: (${a})x^2 + (${b})x + (${c}) = 0`);
-}
-
-
 
 export default startInteractiveMode;

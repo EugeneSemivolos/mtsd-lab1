@@ -10,6 +10,6 @@ process.stdin.on('data', data => {
   } else if (workingMode === 'file') {
     startFileMode();
   } else {
-    console.log('Enter correct mode!');
+    console.log("\nIncorrect mode! Please, enter 'interactive' or 'file' to choose mode");
   }
 });
